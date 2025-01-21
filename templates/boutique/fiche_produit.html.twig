@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ illustration.name }} - Boutique{% endblock %}
+
+{% block body %}
+    <div class="product-page container">
+        <div class="breadcrumb">
+            <a href="{{ path('boutique') }}">Boutique</a> >
+            <a href="{{ path('boutique_categorie', {id: illustration.categorie.id}) }}">{{ illustration.categorie.name }}</a> >
+            {{ illustration.name }}
+        </div>
+
+        <div class="product-details-section">
+            <div class="product-images">
+                <div class="main-image">
+                    <img src="{{ asset('build/images/boutique/' ~ illustration.image1) }}" alt="{{ illustration.name }}">
+                </div>
+
+                <!-- Carrousel pour les autres images (si présentes) -->
+                <div class="thumbnail-images">
+                    {% if illustration.image1 %}
+                        <img src="{{ asset('build/images/boutique/' ~ illustration.image1) }}" alt="Image 1">
+                    {% endif %}
+                    {% if illustration.image2 %}
+                        <img src="{{ asset('build/images/boutique/' ~ illustration.image2) }}" alt="Image 2">
+                    {% endif %}
+                    {% if illustration.image3 %}
+                        <img src="{{ asset('build/images/boutique/' ~ illustration.image3) }}" alt="Image 3">
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="product-details">
+                <h1>{{ illustration.name }}</h1>
+                <p class="product-price">{{ illustration.price }} €</p>
+
+                <div class="product-rating">
+                    <span>★★★★★ (4.5 sur 5)</span>
+                </div>
+
+                <p class="product-description">{{ illustration.description }}</p>
+                <form action="{{ path('add_to_cart', {id: illustration.id, redirect_to: app.request.uri}) }}" method="POST" class="add-to-cart-form">
+                    <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+                </form>
+
+
+                <div class="product-meta">
+                    <p>Catégories: <a href="{{ path('boutique_categorie', {id: illustration.categorie.id}) }}">{{ illustration.categorie.name }}</a></p>
+                    <p>Partage :
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Produits similaires -->
+        <div class="related-products">
+            <h2>Produits similaires</h2>
+            <div class="products-grid">
+                {% for product in related_products %}
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="{{ asset('build/images/boutique/' ~ product.image1) }}" alt="{{ product.name }}">
+                        </div>
+                        <div class="product-details">
+                            <h2>{{ product.name }}</h2>
+                            <p class="product-price">{{ product.price }} €</p>
+                            <a href="{{ path('fiche_produit', {id: product.id}) }}" class="btn btn-secondary">Voir la fiche</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

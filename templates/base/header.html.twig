@@ -1,0 +1,49 @@
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="/">ZETIA <span>AGENCY</span></a>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li>
+                    <a href="/" class="{% if app.request.attributes.get('_route') == 'app_home' %}active{% endif %}">Home</a>
+                </li>
+                <li>
+                    <a href="{{ path('about') }}" class="{% if app.request.attributes.get('_route') == 'about' %}active{% endif %}">A Propos</a>
+                </li>
+                <li>
+                    <a href="{{ path('portfolio') }}" class="{% if app.request.attributes.get('_route') == 'portfolio' %}active{% endif %}">Les Réalisations</a>
+                </li>
+                <li>
+                    <a href="{{ path('boutique')}}" class="{% if app.request.attributes.get('_route') == 'boutique' %}active{% endif %}">Boutique</a>
+                </li>
+                <li>
+                    <a href="{{ path('contact')}}" class="{% if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">Contact</a>
+                </li>
+                <li>
+                    <a href="{{ path('app_account')}}" class="{% if app.request.attributes.get('_route') == 'app_account' %}active{% endif %}">
+                    {% if app.user %}
+                        {{ app.user.email }}
+                    {% else %}
+                        Mon Compte
+                    {% endif %}
+                    </a>
+                </li>
+                <li>
+                   {% set totalQuantity = cart_service.getTotalQuantity() %}
+                    {% if totalQuantity > 0 %}
+                        <a href="{{ path('cart') }}" class="cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="cart-count">{{ totalQuantity }}</span>
+                        </a>
+                    {% endif %}
+                </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}À Propos - Zetia Agency{% endblock %}
+
+{% block body %}
+
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">Qui suis je ? Avez qui allez vous travailler ?</h1>
+            <p class="hero-description">
+                Je m’appelle Maylis, freelance en graphisme, web design et community management. Mon expertise : créer des identités visuelles impactantes, des sites web attractifs, et des stratégies digitales efficaces. Mon objectif ? Vous aider à vous démarquer en ligne. N’hésitez pas à explorer mon travail et à me contacter pour discuter de vos projets !
+            </p>
+            <div class="hero-buttons">
+                <a href="{{ path('contact') }}" class="btn btn-primary">Prendre Contact</a>
+                <a href="{{ path('portfolio') }}" class="btn btn-secondary">Mes réalisations</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Moi et mes valeurs</h2>
+            <p class="section-description">
+                Mon travail repose sur des valeurs fondamentales qui guident chacune de mes collaborations. Je crois que chaque projet mérite attention, passion et une approche personnalisée. Voici les valeurs qui définissent mon approche professionnelle            </p>
+
+            <div class="services-grid">
+                <div class="service-item">Passionnée</div>
+                <div class="service-item highlighted">Ambitieuse</div>
+                <div class="service-item">Dynamique</div>
+                <div class="service-item">Curieuse</div>
+                <div class="service-item">Toujours à l’heure</div>
+                <div class="service-item">Travail d’équipe</div>
+                <div class="service-item highlighted">Créative</div>
+                <div class="service-item">Optimiste</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="about-hero-image">
+                    <img src="{{ asset('build/images/zetia-agency-digital-freelance.jpg') }}" alt="Freelance travaillant sur un projet digital durable avec un ordinateur portable" title="Zetia Agency - Freelance digital durable et innovant">
+                </div>
+                <div class="about-hero-text">
+                    <h2>Créer un monde où chaque interaction est durable</h2>
+                    <p>
+                        Je suis convaincue que chaque interaction digitale doit être à la fois efficace et durable.
+                        Mon but est de concevoir des projets qui résistent à l’épreuve du temps, tout en ayant un impact
+                        positif sur votre audience. Créer un monde où le digital n’est pas seulement un outil, mais un
+                        moteur de changement, est ce qui me pousse à innover constamment.
+                    </p>
+                    <a href="{{ path('portfolio') }}" class="btn btn-primary">Mes réalisations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Mon profil proffessionnel</h2>
+            <p class="faq-subtitle">
+                Mon travail repose sur des valeurs fondamentales qui guident chacune de mes collaborations. Je crois que chaque projet mérite attention, passion et une approche personnalisée. Voici les valeurs qui définissent mon approche professionnelle            </p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Quelles formations ai-je suivies jusqu’à présent ?</h3>
+                    <p>Je suis titulaire d’un bac+3 cheffe de projet digital – option community manager et UI/UX designer.</p>
+                </div>
+
+                <div class="faq-item highlighted">
+                    <h3>Quels types de projets préférez-vous ?</h3>
+                    <p>J’aime travailler sur des projets créatifs où je peux innover, que ce soit pour des startups, des entreprises en pleine croissance ou des projets à fort potentiel digital</p>                </div>
+
+                <div class="faq-item">
+                    <h3>Depuis quand existe l’entreprise Zetia agency ?</h3>
+                    <p>Zetia Agency existe depuis 2021, accompagnant diverses entreprises dans leur transformation digitale.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Quelle est votre approche du travail en freelance ?</h3>
+                    <p>Je privilégie une approche collaborative, transparente et orientée sur les résultats, en restant flexible et à l’écoute des besoins de mes clients.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Quels aspects de votre métier trouvez-vous les plus stimulants ?</h3>
+                    <p>La créativité, les défis constants et la possibilité d’aider mes clients à réussir dans le digital sont les aspects que je trouve les plus motivants.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Quelles sont vos sources d’inspiration dans le digital ?</h3>
+                    <p>Je m’inspire des tendances émergentes, des innovations technologiques et des succès d’autres entreprises du digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Inclusion du Footer #}
+    {% include 'base/footer.html.twig' %}
+
+{% endblock %}

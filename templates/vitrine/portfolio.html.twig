@@ -1,0 +1,246 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio - Zetia Agency{% endblock %}
+
+{% block body %}
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Besoin de voir plus de travaux ? c’est par ici</h1>
+                <p class="hero-description">
+                    Découvrez mes projets récents en graphisme, web design et community management. Chaque réalisation témoigne de mon engagement à transformer vos idées en succès visuels et digitaux.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{{ path('contact') }}" class="btn btn-primary">Prendre Contact</a>
+                    <a href="{{ path('about') }}" class="btn btn-secondary">Qui suis-je ?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="about-hero-image">
+                    <img src="{{ asset('build/images/community_manager_freelance_hydroflex_sud.svg') }}" title="Community manager freelance pour entreprise de maintenance hydraulique" alt="Conversation sur smartphone montrant des conseils d'entretien pour prolonger la durée de vie des systèmes hydrauliques">
+                </div>
+                <div class="about-hero-text">
+                    <h2>Community manager</h2>
+                    <p>
+                        En tant que Community Manager pour Hydroflex, une entreprise spécialisée dans la réparation et la maintenance hydraulique.
+                        J’ai élaboré une stratégie digitale adaptée à leurs besoins spécifiques.
+                        Mon objectif principal était de renforcer la présence en ligne d’Hydrauflex en mettant en valeur leur expertise technique.
+                    </p>
+                    <a href="{{ path('portfolio') }}" class="btn btn-primary">Mes réalisations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <h2 class="portfolio-title">Mes Réalisations</h2>
+
+            <div class="portfolio-grid">
+                <!-- Portfolio item 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/community_manager_freelance_club_libertin.svg') }}" alt="Gestion des réseaux sociaux pour le club libertin Le Haappyy, augmentant visibilité et abonnés" title="Community Manager Freelance - Gestion réseaux sociaux pour Le Haappyy">
+                            <img src="{{ asset('build/images/zetia-agency-community-manager-happy-linkedin.svg') }}" alt="Community manager freelance optimisant la présence de Le Haappyy sur LinkedIn" title="Community Manager Freelance - Optimisation LinkedIn pour Le Haappyy">
+                            <img src="{{ asset('build/images/community_manager_freelance_digital_club_libertin.svg') }}" alt="Community manager freelance optimisant la présence digitale du club libertin Le Haappyy" title="Community Manager Freelance - Stratégie digitale pour Le Haappyy">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion des réseaux sociaux Le Haappyy</h3>
+                    <p>J’ai pris en charge la gestion des réseaux sociaux de Le Haappyy, un club libertin, en optimisant leur présence sur Instagram et Facebook. J’ai également assuré la mise en ligne des flyers sur des sites spécialisés. Grâce à une approche ciblée et créative, les comptes du club ont vu une augmentation notable du nombre d’abonnés et une meilleure visibilité, renforçant ainsi leur position dans ce milieu exclusif.</p>                </div>
+
+                <!-- Portfolio item 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/creation_graphique_nettoyage_vehicule_1.svg') }}" alt="Création graphique représentant la propreté et le professionnalisme pour une entreprise de nettoyage de véhicules" title="Création graphique - Propreté et professionnalisme pour une entreprise de nettoyage de véhicules">
+                            <img src="{{ asset('build/images/creation_graphique_nettoyage_vehicule_2.svg') }}" alt="Design créatif pour une entreprise de nettoyage de véhicules, capturant l'essence de leur métier" title="Création graphique - Design créatif pour une entreprise de nettoyage de véhicules">
+                            <img src="{{ asset('build/images/creation_graphique_nettoyage_vehicule_3.svg') }}" alt="Visuel illustrant le professionnalisme pour une entreprise de nettoyage de véhicules" title="Création graphique - Professionnalisme pour une entreprise de nettoyage de véhicules">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Création graphique pour une entreprise de nettoyage de véhicules</h3>
+                    <p>J’ai conçu des créations graphiques inspirées par une entreprise de nettoyage de véhicules, avec l’idée de capturer l’essence de leur métier. Ces visuels ont été imaginés pour représenter la propreté et le professionnalisme, et bien qu’ils n’aient pas été commandés par l’entreprise, ils démontrent ma capacité à créer des designs pertinents et attractifs pour ce secteur.</p>
+                </div>
+
+                <!-- Portfolio item 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/community_manager_boutique_vetement.svg') }}" alt="Création d'une marque de vêtements avec une identité visuelle forte" title="Création de marque - Identité visuelle pour une marque de vêtements">
+                            <img src="{{ asset('build/images/creation_marque_vetements_2.svg') }}" alt="Gestion des réseaux sociaux pour une marque de vêtements, avec des stratégies de contenu efficaces sur Instagram et Facebook" title="Gestion des réseaux sociaux - Stratégies Instagram et Facebook pour une marque de vêtements">
+                            <img src="{{ asset('build/images/creation_marque_vetements_3.svg') }}" alt="Création de collections captivantes pour une marque de vêtements" title="Création de collections - Marque de vêtements">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+
+                        </div>
+                    </div>
+                    <h3>Création de Marque et Gestion des Réseaux Sociaux</h3>
+                    <p>J’ai conçu et lancé une marque de vêtements en développant une identité visuelle forte et en créant des collections captivantes. En parallèle, j’ai géré et élaboré des publications pour les réseaux sociaux, mettant en place des stratégies de contenu efficaces sur Instagram et Facebook. Bien que le projet n’ait pas abouti, cette expérience m’a permis de renforcer mes compétences en branding et en gestion des médias sociaux, tout en acquérant une vision claire des dynamiques du marché.</p>
+                </div>
+
+                <!-- Portfolio item 4 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/community_manager_instagram_agence_digitale_1.svg') }}" alt="Gestion du compte Instagram d'une agence digitale pour accroître l'engagement et la notoriété" title="Community Manager - Gestion du compte Instagram d'une agence digitale">
+                            <img src="{{ asset('build/images/community_manager_instagram_agence_digitale_2.svg') }}" alt="Stratégie de contenu créative pour améliorer la visibilité d'une agence digitale sur Instagram" title="Community Manager - Stratégie de contenu pour une agence digitale sur Instagram">
+                            <img src="{{ asset('build/images/community_manager_instagram_agence_digitale_3.svg') }}" alt="Augmentation du nombre d'abonnés et amélioration de la visibilité pour une agence digitale sur Instagram" title="Community Manager - Augmentation des abonnés pour une agence digitale">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion du Compte Instagram d'une Agence Digitale</h3>
+                    <p>Durant mon apprentissage au sein d’une agence digitale, j’ai été chargé de la gestion du compte Instagram de l’entreprise. J’ai développé et mis en œuvre une stratégie de contenu visant à accroître l’engagement et à renforcer la notoriété de l’agence sur cette plateforme. Grâce à une approche créative et analytique, j’ai contribué à augmenter le nombre d’abonnés et à améliorer la visibilité des services proposés par l’agence. Cette expérience m’a permis de maîtriser les meilleures pratiques en matière de communication digitale et de gestion des réseaux sociaux.</p>
+                </div>
+
+                <!-- Portfolio item 5 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/graphiste_flyer_orchestre_montpellier.svg') }}" alt="Graphiste créant un flyer coloré et audacieux pour attirer un jeune public aux concerts de l'Orchestre de Montpellier" title="Conception de flyer pour l'Orchestre de Montpellier - Public jeune et design audacieux">
+                        </div>
+                    </div>
+                    <h3>Conception de Flyer pour l'Orchestre de Montpellier</h3>
+                    <p>Dans le cadre d’un projet fictif, j’ai conçu un flyer destiné à attirer un public jeune pour une série de concerts orchestrés. En m’inspirant des tendances actuelles et en utilisant des éléments graphiques audacieux et colorés, j’ai créé un design captivant qui résonne avec les attentes d’une audience plus jeune. Ce flyer, imaginé pour être distribué à la fois en version papier et numérique, a pour objectif d’accroître l’intérêt et la participation des jeunes mélomanes. Ce projet fictif a démontré ma capacité à créer une communication visuelle impactante et adaptée à une cible spécifique.</p>
+                </div>
+
+                <!-- Portfolio item 6 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/web_designer_maquette_application_bijoux_1.svg') }}" alt="Maquette d’application mobile pour une marque de bijoux avec navigation intuitive et élégante" title="Graphiste - Maquette d’application mobile pour une marque de bijoux">
+                            <img src="{{ asset('build/images/web_designer_maquette_application_bijoux_2.svg') }}" alt="Design élégant et fonctionnel pour une application mobile de marque de bijoux" title="Graphiste - Design élégant pour une application mobile de bijoux">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Maquette d'Application Mobile pour une Marque de Bijoux</h3>
+                    <p>J’ai conçu une maquette d’application mobile pour une marque de bijoux offrant des magasins éphémères en France. L’application propose une navigation intuitive, permettant de découvrir les collections, de passer commande, et de localiser les pop-up stores. Le design allie élégance et fonctionnalité, reflétant le luxe des produits tout en offrant une expérience utilisateur fluide et engageante.</p>
+                </div>
+
+                <!-- Portfolio item 7 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/community_manager_gestion_boulangerie_1.svg') }}" alt="Community management pour une boulangerie française, mettant en valeur l’authenticité des produits artisanaux" title="Graphiste - Gestion des réseaux sociaux pour une boulangerie française">
+                            <img src="{{ asset('build/images/community_manager_gestion_boulangerie_2.svg') }}" alt="Stratégie de contenu pour une boulangerie française, renforçant la notoriété sur Instagram" title="Graphiste - Stratégie de contenu pour une boulangerie française">
+                            <img src="{{ asset('build/images/community_manager_gestion_boulangerie_3.svg') }}" alt="Publications attrayantes pour une boulangerie française sur les réseaux sociaux" title="Graphiste - Création de publications pour une boulangerie française">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion des réseaux sociaux pour une boulangerie Française</h3>
+                    <p>J’ai assuré la gestion du community management pour une boulangerie française, en développant une stratégie de contenu qui met en valeur l’authenticité et la qualité de leurs produits artisanaux. En créant des publications attrayantes et en engageant activement avec la communauté sur Instagram, j’ai contribué à renforcer la notoriété de la boulangerie et à fidéliser sa clientèle. Cette expérience a souligné l’importance d’une communication authentique et adaptée dans le secteur de la restauration artisanale.</p>
+                </div>
+
+                <!-- Portfolio item 8 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/illustratrice_minimaliste_contemporaine_1.svg') }}" alt="Illustration minimaliste et contemporaine capturant un style moderne et épuré" title="Illustratrice - Illustration minimaliste contemporaine pour communication visuelle">
+                            <img src="{{ asset('build/images/illustratrice_minimaliste_contemporaine_2.svg') }}" alt="Illustration vectorielle minimaliste utilisant des lignes nettes et une palette monochrome" title="Illustratrice - Illustration vectorielle minimaliste pour réseaux sociaux et supports visuels">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Création d’Illustrations Personnalisées sur Commande</h3>
+                    <p>Je réalise des illustrations personnalisées sur commande, conçues pour répondre précisément aux besoins et aux envies de chaque client. Que ce soit pour des projets personnels, des cadeaux uniques, ou des supports professionnels, j’apporte une attention particulière aux détails pour créer des visuels qui reflètent parfaitement l’identité et le message souhaités. En collaborant étroitement avec mes clients, je m’assure que chaque illustration est unique, correspondant à leur vision et à leurs attentes. Grâce à mon expertise en design, je transforme vos idées en œuvres graphiques originales et sur mesure, prêtes à enrichir tout type de projet.</p>
+                </div>
+
+                <!-- Portfolio item 9 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/graphiste_freelance_banniere_judo.svg') }}" alt="Création d'une bannière pour le Dojo Shiseikan, un club de judo, alliant tradition et modernité" title="Bannière pour le Dojo Shiseikan - Tradition et modernité">
+                        </div>
+                    </div>
+                    <h3>Création d’une Bannière pour un Club de Judo</h3>
+                    <p>J’ai conçu une bannière pour le Dojo Shiseikan, une école de judo et de coaching sportif. Cette bannière a été créée avec une esthétique sobre et élégante, mettant en avant l’identité du club à travers un design minimaliste et une typographie claire. L’intégration du logo du Dojo, associé à un visuel épuré, reflète l’équilibre entre tradition et modernité propre à l’art du judo. La bannière est optimisée pour une utilisation sur les réseaux sociaux, renforçant ainsi la présence en ligne du club tout en attirant de nouveaux membres. Ce projet illustre ma capacité à créer des éléments visuels qui allient fonctionnalité et esthétique pour des institutions sportives.</p>
+                </div>
+
+                <!-- Portfolio item 10 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/community_manager_freelance_nettoyage_express_1.svg') }}" alt="Community manager freelance développant une stratégie de contenu Instagram pour Nettoyage Express Véhicules" title="Community Manager Freelance - Stratégie Instagram pour Nettoyage Express Véhicules">
+                            <img src="{{ asset('build/images/community_manager_freelance_nettoyage_express_2.svg') }}" alt="Gestion des réseaux sociaux pour une entreprise de nettoyage de véhicules à domicile" title="Community Manager Freelance - Gestion des réseaux sociaux pour Nettoyage Express Véhicules">
+                            <img src="{{ asset('build/images/community_manager_freelance_nettoyage_express_3.svg') }}" alt="Stratégie de contenu pour promouvoir les services de Nettoyage Express Véhicules sur Instagram" title="Community Manager Freelance - Stratégie de contenu pour Nettoyage Express Véhicules">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion des réseaux sociaux Nettoyage Express Véhicules</h3>
+                    <p>J’ai pris en charge le community management pour une entreprise spécialisée dans le nettoyage de véhicules à domicile. Mon rôle était de développer une stratégie de contenu efficace pour leur compte Instagram, visant à promouvoir la commodité et la qualité des services offerts.</p>
+                </div>
+
+                <!-- Portfolio item 11 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-carousel">
+                        <div class="carousel">
+                            <img src="{{ asset('build/images/community_manager_freelance_formation_1.svg') }}" alt="Community manager freelance pour une agence de formation en co-employabilité, gestion de contenu sur Instagram" title="Community Manager Freelance - Gestion réseaux sociaux pour une agence de formation">
+                            <img src="{{ asset('build/images/community_manager_freelance_formation_2.svg') }}" alt="Stratégie de contenu Instagram pour une agence de formation en développement de capital marque" title="Community Manager Freelance - Stratégie Instagram pour une agence de formation">
+                            <img src="{{ asset('build/images/community_manager_freelance_formation_3.svg') }}" alt="Community manager freelance pour une agence de formation, mettant en avant la marque personnelle des professionnels" title="Community Manager Freelance - Promotion de la marque personnelle pour une agence de formation">
+                        </div>
+                        <!-- Indicateurs -->
+                        <div class="carousel-indicators">
+                            <span class="indicator active"></span>
+                            <span class="indicator"></span>
+                            <span class="indicator"></span>
+                        </div>
+                    </div>
+                    <h3>Gestion des réseaux sociaux agence de Formation Co-employabilité et Capital Marque</h3>
+                    <p>J’ai pris en charge la gestion du community management pour une agence de formation spécialisée en co-employabilité et développement de capital marque. Mon rôle était de mettre en place une stratégie de contenu sur Instagram, visant à sensibiliser et à informer le public sur les programmes de formation offerts, tout en mettant en avant l’importance du développement de la marque personnelle pour les professionnels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Inclusion du Footer #}
+    {% include 'base/footer.html.twig' %}
+
+{% endblock %}

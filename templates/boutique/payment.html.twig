@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choisissez une option de paiement{% endblock %}
+
+{% block body %}
+    <div class="payment-options-page container">
+        <h1>Choisissez une option de paiement</h1>
+
+        {% if user %}
+            <!-- Si l'utilisateur est connecté, afficher ses informations -->
+            <p>Vous êtes connecté en tant que {{ user.firstname }} {{ user.lastname }}</p>
+            <p>Email : {{ user.email }}</p>
+            <p>Adresse : {{ user.adress }}</p>
+            <!-- Afficher un bouton pour finaliser le paiement -->
+            <form action="{{ path('payment_confirmation') }}" method="POST">
+                <button type="submit" class="btn btn-primary">Passer au paiement</button>
+            </form>
+        {% else %}
+            <!-- Si l'utilisateur n'est pas connecté, afficher le formulaire invité -->
+            <form action="{{ path('guest_checkout') }}" method="POST">
+                <label for="firstname">Prénom :</label>
+                <input type="text" name="firstname" id="firstname" required>
+
+                <label for="lastname">Nom :</label>
+                <input type="text" name="lastname" id="lastname" required>
+
+                <label for="email">Adresse E-MAIL :</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="adress">Adresse :</label>
+                <input type="text" name="adress" id="adress" required>
+
+                <label for="postal_code">Code postal :</label>
+                <input type="text" name="postal_code" id="postal_code" required>
+
+                <label for="city">Ville :</label>
+                <input type="text" name="city" id="city" required>
+
+                <button type="submit" class="btn btn-primary">Finaliser la commande</button>
+            </form>
+        {% endif %}
+
+        <!-- Afficher une option pour s'inscrire si l'utilisateur n'est pas encore inscrit -->
+        <p>Pas encore de compte ? <a href="{{ path('app_register') }}" class="btn btn-secondary">Créer un compte</a></p>
+
+        <!-- Bénéfices -->
+        <div class="benefits">
+            <div>
+                <i class="fas fa-shipping-fast"></i>
+                <p>Livraison rapide et simple</p>
+            </div>
+            <div>
+                <i class="fas fa-credit-card"></i>
+                <p>Paiement sécurisé</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

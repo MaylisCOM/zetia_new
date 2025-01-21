@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Choisissez une option de paiement{% endblock %}
+
+{% block body %}
+    <div class="payment-options-page container">
+        <h1>Salut toi !</h1>
+        <p id="form-intro">Entre tes informations pour te connecter et passer au paiement :</p>
+
+        <!-- Formulaire de connexion -->
+        <div id="login-form">
+            <form action="{{ path('app_login') }}" method="POST">
+                <label for="email">Adresse E-MAIL :</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" name="password" id="password" required>
+
+                <button type="submit" class="btn btn-primary">Se connecter et passer au paiement</button>
+            </form>
+
+            <p>Pas encore inscrit ? <a href="#" id="switch-to-register">Crée un compte ici</a>.</p>
+        </div>
+
+        <!-- Formulaire d'inscription (masqué par défaut) -->
+        <div id="register-form" style="display: none;">
+            <form action="{{ path('app_register') }}" method="POST">
+                <label for="firstname">Prénom :</label>
+                <input type="text" name="firstname" id="firstname" required>
+
+                <label for="lastname">Nom :</label>
+                <input type="text" name="lastname" id="lastname" required>
+
+                <label for="email">Adresse E-MAIL :</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="password">Mot de passe :</label>
+                <input type="password" name="password" id="password" required>
+
+                <label for="adress">Adresse :</label>
+                <input type="text" name="adress" id="adress" required>
+
+                <button type="submit" class="btn btn-primary">S'inscrire et passer au paiement</button>
+            </form>
+
+            <p>Déjà inscrit ? <a href="#" id="switch-to-login">Se connecter ici</a>.</p>
+        </div>
+
+        <!-- Option de commande en tant qu'invité -->
+        <a href="{{ path('guest_checkout') }}" class="btn btn-secondary">Commander en tant qu'invité</a>
+
+        <!-- Bénéfices pour les utilisateurs inscrits -->
+        <div class="benefits">
+            <div>
+                <i class="fas fa-tag"></i>
+                <p>d'offres exclusives</p>
+            </div>
+            <div>
+                <i class="fas fa-shipping-fast"></i>
+                <p>Suivi simple des livraisons et retours</p>
+            </div>
+            <div>
+                <i class="fas fa-credit-card"></i>
+                <p>Profite du paiement rapide</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

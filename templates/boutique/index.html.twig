@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Découvrez la Boutique Zetia Agency</h1>
+                <p class="hero-description">
+                    Explorez une sélection unique d'illustrations minimalistes et contemporaines créées par Zetia Agency.
+                    Chaque œuvre capture l'essence de la créativité et du design moderne, et est disponible en édition limitée.
+                    Que vous recherchiez une touche artistique pour vos projets ou un visuel marquant pour votre espace,
+                    vous trouverez ici des créations originales à la fois élégantes et expressives. Parcourez nos catégories
+                    et trouvez l'illustration qui vous correspond.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{{ path('contact') }}" class="btn btn-primary">Prendre Contact</a>
+                    <a href="{{ path('about') }}" class="btn btn-secondary">Qui suis-je ?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liste des catégories et du bouton Tous les produits -->
+    <div class="categories-grid">
+        <!-- Bouton Tous les produits comme une catégorie -->
+        <div class="category-card">
+            <a href="{{ path('boutique') }}">
+                <div class="category-icon">
+                    <img src="{{ asset('build/images/icons/grid.png') }}" alt="Tous les produits"> <!-- Remplace par une icône générique -->
+                </div>
+                <div class="category-name">
+                    <p>Tous les produits</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Les autres catégories -->
+        {% for categorie in categories %}
+            <div class="category-card">
+                <a href="{{ path('boutique_categorie', {id: categorie.id}) }}">
+                    <div class="category-icon">
+                        {% if categorie.logo %}
+                            <img src="{{ asset('build/images/icons/' ~ categorie.logo) }}" alt="Création graphique représentant la propreté et le professionnalisme pour une entreprise de nettoyage de véhicules" title="Création graphique - Propreté et professionnalisme pour une entreprise de nettoyage de véhicules">
+
+                        {% else %}
+                            <img src="{{ asset('images/default-category.png') }}" alt="{{ categorie.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="category-name">
+                        <p>{{ categorie.name }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- Grille des produits -->
+    <div class="products-grid">
+        {% for illustration in illustrations %}
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{ asset('build/images/boutique/' ~ illustration.image1) }}" alt="Création graphique représentant la propreté et le professionnalisme pour une entreprise de nettoyage de véhicules" title="Création graphique - Propreté et professionnalisme pour une entreprise de nettoyage de véhicules">
+                </div>
+                <div class="product-details">
+                    <h2>{{ illustration.name }}</h2>
+
+                    <!-- Ajout de la description -->
+                    <p class="product-description">{{ illustration.description }}</p>
+
+                    <p class="product-price">{{ illustration.price }} €</p>
+
+                    <div class="product-buttons">
+                        <a href="{{ path('fiche_produit', {id: illustration.id}) }}" class="btn btn-secondary">
+                            Voir la fiche
+                        </a>
+
+                        <form action="{{ path('add_to_cart', {id: illustration.id, redirect_to: app.request.uri}) }}" method="POST" class="add-to-cart">
+                            <button type="submit" class="fa fa-shopping-cart"></button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

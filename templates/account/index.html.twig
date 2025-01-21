@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="container">
+
+    <h1 class="text-center">Mon compte</h1>
+    {% include 'account/_menu.html.twig' %}
+    <div class="col-md-6 offset-md-3">
+        <h2 class="text-center">Mes informations</h2>
+        <p>Nom: {{ app.user.lastname }}</p>
+        <p>Prénom: {{ app.user.firstname }}</p>
+        <p>Email: {{ app.user.email }}</p>
+       
+      
+    </div>
+{% endblock %}
+

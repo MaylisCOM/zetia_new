@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Zetia Agency{% endblock %}
+
+{% block body %}
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Zetia Agency, Votre freelance digital</h1>
+                <p class="hero-description">
+                    Bienvenue sur le site de Zetia Agency, votre spécialiste en freelance digital.
+                    Je propose des solutions sur-mesure pour aider les entreprises à optimiser leur présence en ligne.
+                    Que vous ayez besoin de créer un site web performant, de développer votre identité visuelle,
+                    ou de gérer efficacement vos réseaux sociaux, je mets mon expertise à votre service pour faire
+                    de votre projet un succès.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{{ path('contact') }}" class="btn btn-primary">Prendre Contact</a>
+                    <a href="{{ path('portfolio') }}" class="btn btn-secondary">Mes réalisations</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{ asset('build/images/zetia-agency-web-designer-community-manager-graphiste.png') }}" alt="graphiste freelance digital">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Les différentes prestations</h2>
+            <p class="section-subtitle">
+                Services de freelance digital pour booster votre présence en ligne
+            </p>
+            <p class="section-description">
+                Je vous propose un large éventail de services digitaux pour répondre à vos besoins spécifiques. Mon expertise couvre de nombreux domaines clés du digital, tels que le web design, la gestion de communauté sur les réseaux sociaux, le référencement naturel (SEO), et bien plus encore.
+            </p>
+
+            <div class="services-grid">
+                <div class="service-item">Logo</div>
+                <div class="service-item highlighted">Web Design</div>
+                <div class="service-item">Community manager</div>
+                <div class="service-item">WordPress</div>
+                <div class="service-item">Référencement payant (SEA)</div>
+                <div class="service-item">Illustration</div>
+                <div class="service-item">Référencement naturel (SEO)</div>
+                <div class="service-item">Prestashop</div>
+                <div class="service-item">Carte de visite</div>
+                <div class="service-item highlighted">Charte graphique</div>
+                <div class="service-item">Kakemono</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="portfolio-title">Les prestations digitales les plus demandées pour maximiser votre visibilité en ligne</h2>
+            <a href="{{ path('contact') }}" class="btn btn-primary">Prendre Contact</a>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="{{ asset('build/images/community_manager_freelance_hydroflex.svg') }}" title="Community manager freelance pour entreprise de maintenance hydraulique" alt="Conversation sur smartphone montrant des conseils d'entretien pour prolonger la durée de vie des systèmes hydrauliques">
+                    </div>
+                    <h3>Gestion de votre réseaux instagram</h3>
+                    <p>J’optimise vos publications, vos stories et votre stratégie de contenu pour maximiser l’engagement et attirer de nouveaux abonnés.</p>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="{{ asset('build/images/web_designer_freelance_salle_de_sport.svg') }}" alt="Maquette de site internet pour une salle de sport avec abonnements et équipe professionnelle" title="Maquette de site - Salle de sport avec abonnements">
+                    </div>
+                    <h3>Création de vos maquette web et mobile</h3>
+                    <p>Obtenez des maquettes de site web personnalisées et optimisées pour une expérience utilisateur fluide et engageante.</p>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="{{ asset('build/images/web_designer_freelance_personal_trainning.svg') }}" alt="Maquette de site internet pour une entreprise de coaching avec électrostimulation" title="Maquette de site - Coaching et électrostimulation">
+                    </div>
+                    <h3>Intégration de votre maquette sur Wordpress et Prestashop</h3>
+                    <p>Je m’occupe de l’intégration complète de vos maquettes, garantissant un site rapide, sécurisé et responsive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Vos questions les plus fréquentes</h2>
+            <p class="faq-subtitle">
+                Vous vous posez des questions sur mes services ? Retrouvez ici les réponses aux interrogations les plus courantes de mes clients. Mon objectif est de vous accompagner avec transparence et efficacité.
+            </p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Travaillez-vous sur WordPress et PrestaShop ?</h3>
+                    <p>J'intègre des sites sous WordPress et PrestaShop, deux plateformes performantes pour gérer votre site ou votre boutique en ligne de manière intuitive.</p>
+                </div>
+
+                <div class="faq-item highlighted">
+                    <h3>Créez-vous des maquettes pour web et mobile ?</h3>
+                    <p>Absolument. Je conçois des maquettes de site web optimisées pour le mobile et le desktop, afin de garantir une expérience utilisateur fluide et responsive sur tous les appareils.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Puis-je vous confier la gestion de mon LinkedIn d'entreprise ?</h3>
+                    <p>Je prends en charge la gestion de vos comptes Instagram, Facebook, LinkedIn, et bien plus encore, en élaborant une stratégie de contenu adaptée pour engager votre audience.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Comment puis-je vous contacter pour un projet ?</h3>
+                    <p>Vous pouvez me contacter via la page ‘Contact’, par email ou formulaire, et je vous répondrai rapidement pour discuter de votre projet.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Assurez-vous la maintenance après la création du site ?</h3>
+                    <p>Oui, je propose des services de maintenance pour assurer que votre site reste à jour, sécurisé et fonctionnel après sa mise en ligne.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Travaillez-vous uniquement avec des entreprises ?</h3>
+                    <p>Je travaille avec des entreprises de toutes tailles ainsi qu’avec des particuliers, en adaptant mes services à leurs besoins spécifiques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="presentation" class="presentation-section">
+        <div class="container">
+            <div class="presentation-grid">
+                <div class="presentation-image">
+                    <img src="{{ asset('build/images/community_manager_boutique_vetement.svg') }}" alt="Création de marque et gestion des réseaux sociaux pour une boutique de vêtements éco-responsables" title="Création de marque - Boutique de vêtements éco-responsables et gestion Instagram, Facebook">
+                </div>
+                <div class="presentation-content">
+                    <h2>Votre freelance digital à votre service</h2>
+                    <p>Découvrez mon parcours, mes compétences, et ma passion pour le digital. En tant que freelance spécialisé, je mets à profit mon expérience pour vous offrir des solutions sur-mesure et accompagner vos projets vers le succès. Apprenez-en plus sur mon approche et ma vision.</p>
+                    <a href="{{ path('portfolio') }}" class="btn btn-secondary">Mes réalisations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {# Inclusion du Footer #}
+    {% include 'base/footer.html.twig' %}
+
+{% endblock %}

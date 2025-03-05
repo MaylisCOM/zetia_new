@@ -2,10 +2,11 @@
 
 
 {% block body %}
-<div class="container">
-
+<div class="container_admin">
+    <div class="compte">
     <h1 class="text-center">Mon compte</h1>
     {% include 'account/_menu.html.twig' %}
+    </div>
     <div class="col-md-6 offset-md-3">
         <h2 class="text-center">Mes informations</h2>
         <p>Nom: {{ app.user.lastname }}</p>

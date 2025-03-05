@@ -65,4 +65,12 @@ class CartController extends AbstractController
         // Rediriger vers la page panier
         return $this->redirectToRoute('cart');
     }
+
+    #[Route('/mon-panier/annulation', name: 'app_cart_cancel')]
+    public function cancel(): Response
+    {
+        $this->addFlash('warning', 'Votre paiement a été annulé.');
+        return $this->redirectToRoute('cart');
+    }
+
 }

@@ -13,19 +13,19 @@
         <div class="product-details-section">
             <div class="product-images">
                 <div class="main-image">
-                    <img src="{{ asset('build/images/boutique/' ~ illustration.image1) }}" alt="{{ illustration.name }}">
+                    <img src="{{ asset('uploads/illustrations/' ~ illustration.image1) }}" alt="{{ illustration.name }}">
                 </div>
 
                 <!-- Carrousel pour les autres images (si présentes) -->
                 <div class="thumbnail-images">
                     {% if illustration.image1 %}
-                        <img src="{{ asset('build/images/boutique/' ~ illustration.image1) }}" alt="Image 1">
+                        <img src="{{ asset('uploads/illustrations/' ~ illustration.image1) }}" alt="Image 1">
                     {% endif %}
                     {% if illustration.image2 %}
-                        <img src="{{ asset('build/images/boutique/' ~ illustration.image2) }}" alt="Image 2">
+                        <img src="{{ asset('uploads/illustrations/' ~ illustration.image2) }}" alt="Image 2">
                     {% endif %}
                     {% if illustration.image3 %}
-                        <img src="{{ asset('build/images/boutique/' ~ illustration.image3) }}" alt="Image 3">
+                        <img src="{{ asset('uploads/illustrations/' ~ illustration.image3) }}" alt="Image 3">
                     {% endif %}
                 </div>
             </div>
@@ -38,11 +38,10 @@
                     <span>★★★★★ (4.5 sur 5)</span>
                 </div>
 
-                <p class="product-description">{{ illustration.description }}</p>
+                <p class="product-description">{{ illustration.description | striptags }}</p>
                 <form action="{{ path('add_to_cart', {id: illustration.id, redirect_to: app.request.uri}) }}" method="POST" class="add-to-cart-form">
                     <button type="submit" class="btn btn-primary">Ajouter au panier</button>
                 </form>
-
 
                 <div class="product-meta">
                     <p>Catégories: <a href="{{ path('boutique_categorie', {id: illustration.categorie.id}) }}">{{ illustration.categorie.name }}</a></p>
@@ -62,7 +61,7 @@
                 {% for product in related_products %}
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="{{ asset('build/images/boutique/' ~ product.image1) }}" alt="{{ product.name }}">
+                            <img src="{{ asset('uploads/illustrations/' ~ product.image1) }}" alt="{{ product.name }}">
                         </div>
                         <div class="product-details">
                             <h2>{{ product.name }}</h2>

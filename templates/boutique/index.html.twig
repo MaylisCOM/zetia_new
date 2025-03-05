@@ -62,13 +62,13 @@
         {% for illustration in illustrations %}
             <div class="product-card">
                 <div class="product-image">
-                    <img src="{{ asset('build/images/boutique/' ~ illustration.image1) }}" alt="Création graphique représentant la propreté et le professionnalisme pour une entreprise de nettoyage de véhicules" title="Création graphique - Propreté et professionnalisme pour une entreprise de nettoyage de véhicules">
+                    <img src="{{ asset('uploads/illustrations/' ~ illustration.image1) }}" alt="Création graphique représentant la propreté et le professionnalisme pour une entreprise de nettoyage de véhicules" title="Création graphique - Propreté et professionnalisme pour une entreprise de nettoyage de véhicules">
                 </div>
                 <div class="product-details">
                     <h2>{{ illustration.name }}</h2>
 
                     <!-- Ajout de la description -->
-                    <p class="product-description">{{ illustration.description }}</p>
+                    <p class="product-description">{{ illustration.description | striptags }}</p>
 
                     <p class="product-price">{{ illustration.price }} €</p>
 

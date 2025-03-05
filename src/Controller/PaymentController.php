@@ -36,29 +36,31 @@ class PaymentController extends AbstractController
             $products_for_stripe[] = [
                 'price_data' => [
                     'currency' => 'eur',
-                    'unit_amount' => number_format($product->getProductPrice() * 100, 0, '', ''),
+                    'unit_amount' => intval($product->getProductPrice() * 100),
                     'product_data' => [
-                        'name' => $product->getProductName(),
+                        'name' => mb_convert_encoding($product->getProductName(), 'UTF-8', 'auto'),
                         'images' => [
-                            $_ENV['DOMAIN'].'/build/images/boutique/'.$product->getProductIllustration()
+                            $_ENV['DOMAIN'].'/uploads/illustrations/'.rawurlencode($product->getProductIllustration())
                         ]
+
                     ]
                 ],
-                'quantity' => $product->getProductQuantity(),
+                'quantity' => intval($product->getProductQuantity()),
             ];
         }
 
         /** @var User $user */
         $user = $this->getUser();
         
+        $success_url = $_ENV['DOMAIN'] . '/commande/merci/' . '{CHECKOUT_SESSION_ID}';
+        $cancel_url = $_ENV['DOMAIN'] . '/mon-panier/annulation';
+
         $checkout_session = Session::create([
             'customer_email' => $user->getEmail(),
-            'line_items' => [[
-                $products_for_stripe
-            ]],
+            'line_items' => $products_for_stripe,
             'mode' => 'payment',
-            'success_url' => $_ENV['DOMAIN'] . '/commande/merci/{CHECKOUT_SESSION_ID}',
-            'cancel_url' => $_ENV['DOMAIN'] . '/mon-panier/annulation',
+            'success_url' => $success_url,
+            'cancel_url' => $cancel_url,
         ]);
 
         $order->setStripeSessionId($checkout_session->id);
@@ -70,7 +72,6 @@ class PaymentController extends AbstractController
     #[Route('/commande/merci/{stripe_session_id}', name: 'app_payment_success')]
     public function success($stripe_session_id, OrderRepository $orderRepository, EntityManagerInterface $entityManager, Cart $cart, Request $request): Response
     {
-
         $user = $this->getUser();
         if (!$user) {
             throw new \LogicException('User is not authenticated.');

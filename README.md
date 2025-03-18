@@ -40,6 +40,7 @@ DATABASE_URL="mysql://root:root@127.0.0.1:3306/zetia"
 STRIPE_SECRET_KEY="sk_test_xxxx"
 STRIPE_PUBLIC_KEY="pk_test_xxxx"
 DOMAIN="http://localhost:8000"
+MESSENGER_TRANSPORT_DSN=doctrine://default
 
 4. Création de la base de données et migration
 
@@ -61,6 +62,10 @@ L’utilisateur peut naviguer sur le site pour consulter les services proposés 
 Administrateur
 
 L’administrateur a accès à un tableau de bord via EasyAdmin lui permettant de gérer les produits de la boutique. Il peut ajouter, modifier ou supprimer des illustrations en toute autonomie. Il peut également gérer les utilisateurs inscrits et surveiller l’activité sur le site.
+
+information connexion pour voir le dashbord admin : 
+Adresse : maylis.pala.pro@gmail.com
+mdp : M081099
 
 Problèmes Courants et Solutions
 
